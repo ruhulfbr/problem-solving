@@ -8,40 +8,31 @@ class Solution {
      * @return String[]
      */
     function findRestaurant($list1, $list2) {
-        
-        if( count($list1) >  count($list2)){
-            $loop_list = $list2;
-            $else_list = $list1;
-        }
-        else{
-            $loop_list = $list1;   
-            $else_list = $list2;
-        }
+        $string_arr = [];
+        $key_arr    = [];
 
-        $common_strings = [];
-        $min_key_arr = [];
-
-        foreach ($loop_list as $key => $value) {
-            if( in_array($value, $else_list) ){
-                $else_key = array_search($value, $else_list);
-                $common_strings[] = $key+$else_key.'#'.$value;
-                $min_key_arr[] = $key+$else_key;
+        $min_key = 0;
+        foreach ($list2 as $key => $value) {
+            $key_2 = array_search($value, $list1);
+            if( $key_2 !== false ){
+                $string_arr[] = $key+$key_2.'#'.$value;
+                $key_arr[] = $key+$key_2;
             }
         }
 
-        $min_key = min($min_key_arr);
-        $common_str = [];
+        $min_key = min($key_arr);
+        $common_str_arr = [];
 
-        if( !empty($common_strings) ){
-            foreach ($common_strings as $key => $value) {
+        if( !empty($string_arr) ){
+            foreach ($string_arr as $key => $value) {
                 $str_arr = explode('#', $value);
                 if($str_arr[0] == $min_key){
-                    $common_str[] = $str_arr[1];
+                    $common_str_arr[] = $str_arr[1];
                 }
             }
         }
 
-        return $common_str;
+        return $common_str_arr;
     }
 }
 
