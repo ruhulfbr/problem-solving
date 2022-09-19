@@ -11,7 +11,6 @@ class Solution {
         $string_arr = [];
         $key_arr    = [];
 
-        $min_key = 0;
         foreach ($list2 as $key => $value) {
             $key_2 = array_search($value, $list1);
             if( $key_2 !== false ){
