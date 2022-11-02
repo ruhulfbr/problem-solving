@@ -1,15 +1,13 @@
  <?php 
 
+ //05. Longest Palindromic Substring
+
 class Solution {
 
     /**
      * @param String $s
      * @return String
      */
-
-
-
-
    function longestPalindrome($s) {
       if( strlen($s) == 1 ){
          return $s;

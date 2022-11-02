@@ -1,3 +1,5 @@
+//1684. Count the Number of Consistent Strings
+
 /**
  * @param {string} allowed
  * @param {string[]} words

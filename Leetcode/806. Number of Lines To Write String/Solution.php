@@ -1,4 +1,6 @@
 <?php
+//806. Number of Lines To Write String
+
 class Solution {
     function numberOfLines($widths, $S) {
         $S = str_split($S);

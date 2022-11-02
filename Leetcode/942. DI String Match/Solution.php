@@ -1,5 +1,7 @@
 <?php
 
+//942. DI String Match
+
 class Solution {
     function diStringMatch($S) {
         $S = str_split($S);

@@ -1,3 +1,5 @@
+//1002. Find Common Characters - Javascript
+
 var commonChars = function (A) {
   let first = A[0].split("").sort();
   let sol = [];
